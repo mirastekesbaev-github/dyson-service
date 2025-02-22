@@ -1,0 +1,348 @@
+<template>
+  <div class="order">
+    <modal
+      name="order-modal"
+      :width="400"
+      height="auto"
+      classes="modal"
+      overlay-transition="fade"
+      @before-close="beforeClose"
+      :adaptive="true"
+    >
+      <button class="modal-button" @click="closeModal">
+        <img src="@/assets/icons/close-line.svg">
+      </button>
+      <h2 class="modal-title tac">
+          Заявка на обратный звонок
+        </h2>
+      <div class="w100">
+        <form action="https://formspree.io/f/xzblerpk" method="POST" class="modal-form" @submit.prevent="submit">
+          <div class="form-field" :class="{ 'error': $v.form.city.$error }"> 
+            <label for="city">Ваш город</label>
+            <div 
+              class="select" 
+              id="city" 
+              name="city"
+              @click.stop="toggleOptions"
+              v-click-outside="closeOptions"
+            >
+              <p>{{ $v.form.city.$model }}</p>
+              <div class="arrow">
+                <img v-if="isOpen" class="icon" src="../../assets/icons/arrow-up-s-line.svg" alt="arrow-up">
+                <img v-if="!isOpen" class="icon" src="../../assets/icons/arrow-down-s-line.svg" alt="arror-down">
+              </div>
+              <div class="options" :class="{ 'active': isOpen }">
+                <p 
+                  v-for="city in cities" 
+                  :key="city.id"  
+                  class="option"
+                  @click.stop="selectOption(city)"
+                >
+                  {{ city.value }}
+                </p>
+              </div>
+            </div>  
+            <span v-if="!$v.form.city.required && $v.form.city.$dirty" class="error-text">
+              Заполните обязательное поле!
+            </span>
+          </div>
+          <div class="form-field" :class="{ 'error': $v.form.name.$error }">
+            <label for="name">Ваше имя</label>
+            <input
+              v-model.trim="$v.form.name.$model"
+              class="input"
+              id="name"
+              type="text"
+              name="name"
+            >
+            <span v-if="!$v.form.name.required && $v.form.name.$dirty" class="error-text">
+              Заполните обязательное поле!
+            </span>
+          </div>
+          <div class="form-field" :class="{ 'error': $v.form.phone.$error }">
+            <label for="phone">Ваш телефон</label>
+            <input
+              v-model.trim="$v.form.phone.$model"
+              class="input"
+              id="phone"
+              type="text"
+              name="phone"
+              v-mask="'+7 (###) ###-##-##'"
+            >
+            <span v-if="!$v.form.phone.required && $v.form.phone.$dirty" class="error-text">
+              Заполните обязательное поле!
+            </span>
+            <span v-if="!$v.form.phone.minLength && $v.form.phone.$dirty" class="error-text">
+              Введите корректный номер телефона!
+            </span>
+          </div>
+          <UIButton btn-name="Отправить" display="block" type="submit" :load="load"/>
+        </form>
+      </div>
+    </modal>
+  </div>
+</template>
+
+<script>
+import { required, minLength } from 'vuelidate/lib/validators'
+import { mask } from 'vue-the-mask'
+import UIButton from '@/components/ui/Button.vue'
+
+export default {
+  name: 'OrderModal',
+  directives: { mask },
+  components: { UIButton },
+  data() {
+    return {
+      load: false,
+      form: {
+        city: '',
+        name: '',
+        phone: ''
+      },
+      cities: [
+        {
+          id: 1,
+          value: 'Астана'
+        },
+        {
+          id: 2,
+          value: 'Алматы'
+        },
+        {
+          id: 3,
+          value: 'Шымкент'
+        }
+      ],
+      isOpen: false
+    }
+  },
+  validations: {
+    form: {
+      city: { required },
+      name: { required },
+      phone: {
+        required,
+        minLength: minLength(18)
+      }
+    }
+  },
+  destroyed() {
+    this.city = ''
+    this.name = ''
+    this.phone = ''
+    this.isOpen = false
+    this.$v.$reset()
+  },
+  methods: {
+    beforeClose() {
+      this.city = ''
+      this.$v.form.city.$model = ''
+      this.name = ''
+      this.$v.form.name.$model = ''
+      this.phone = ''
+      this.$v.form.phone.$model = ''
+      this.isOpen = false
+      this.$v.$reset()
+    },
+    closeModal() {
+      this.$modal.hide('order-modal')
+    },
+    submit(e) {
+      this.$v.$touch()
+      if (!this.$v.$invalid) {
+        this.load = true
+        const data = new FormData()
+        data.append('Город', this.form.city)
+        data.append('Имя', this.form.name)
+        data.append('Телефон', this.form.phone)
+        fetch(e.target.action, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+          },
+          body: data
+        })
+          .then((response) => {
+            if (response.ok) {
+              this.$modal.hide('order-modal')
+              this.$modal.show('order-success-modal')
+            } else {
+              this.$modal.hide('order-modal')
+              this.$modal.show('order-error-modal')
+            }
+          })
+          .finally(() => {
+            this.load = false
+          })
+      }
+    },
+    toggleOptions() {
+      this.isOpen = !this.isOpen; 
+    },
+    closeOptions() {
+      this.isOpen = false;
+    },
+    selectOption(city) {
+      this.$v.form.city.$model = city.value;
+      if (this.$v.form.city.$model) {
+        this.closeOptions()
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.modal {
+  position: relative;
+  background-color: #fff;
+  width: 460px;
+  padding: 32px 32px 42px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 0 rgba(27, 33, 58, 0.4) !important;
+
+  &-button {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: none;
+    outline: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-title {
+    padding-top: 24px;
+    padding-bottom: 18px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 100%;
+    color: $gray700;
+  }
+
+  &-form {
+    .form-field {
+      margin-top: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 8px;
+
+        &::after {
+          content: '*';
+          position: absolute;
+          top: -2px;
+          margin-left: 3px;
+          color: $error500;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .input, .select {
+        padding: 12px 12px;
+        outline: none;
+        border: 1px solid $gray400;
+        border-radius: 4px;
+        font-size: 16px;
+        height: 44px;
+      }
+
+      span.error-text {
+        display: block;
+        margin-top: 2px;
+        z-index: 0;
+        font-size: 13px;
+        color: $error500;
+        animation: myAni 1s linear forwards;
+      }
+
+      @keyframes myAni {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 100%;
+        }
+      }
+
+      &.error .input {
+        border-color: $error500;
+      }
+
+      &.error .select {
+        border-color: $error500;
+      }
+
+      &:nth-child(1), &:nth-child(2) {
+        margin-bottom: 20px;
+      }
+
+      & .select {
+        position: relative;
+        cursor: pointer;
+
+        .arrow {
+          position: absolute;
+          top: 50%;
+          right: 12px;
+          transform: translateY(-50%);
+          z-index: 100;
+
+          .icon {
+            display: block;
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+        .options {
+          display: none;
+
+          &.active {
+            display: block;
+            border: 1px solid $gray400;
+            border-radius: 4px;
+            z-index: 100;
+            background: #fff;
+            position: absolute;
+            top: 48px;
+            left: -1px;
+            width: calc(100% + 2px);
+          }
+
+          .option {
+            padding: 12px 12px
+          }
+
+          .option:hover {
+            background: $primary25;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .modal {
+
+  }
+}
+</style>
