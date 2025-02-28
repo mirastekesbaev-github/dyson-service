@@ -3,8 +3,8 @@
     <div class="container">
       <div class="header__body flex aic jcsb pt6">
         <div class="header__logo">
-          <a href="https://dyson-service.kz">
-            <img src="../../assets/img/dyson-logo-new.jpeg" alt="dyson">
+          <a class="header__link" href="https://dyson-service.kz">
+            Центр технического обслуживания dyson
           </a>
         </div>
         <div class="header__burger" @click="toggleMenuVisible">
@@ -159,11 +159,11 @@ export default {
   &__logo {
     width: 100px;
     height: 56px;
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-align: center;
   }
 
   &__burger {
