@@ -78,13 +78,13 @@ export default {
       this.$modal.show('order-modal')
     },
     toggleMenuVisible () {
-      this.$store.commit('setMenuVisible', !this.menuVisible)
-      this.$store.commit('setOverlayVisible', this.menuVisible)
+      this.$store.commit("set", ["menuVisible", !this.menuVisible]);
+      this.$store.commit("set", ["overlayVisible", this.menuVisible]);
     },
     scrollTo(value, isSmall = false) {
       if (isSmall) {
-        this.$store.commit('setMenuVisible', false)
-        this.$store.commit('setOverlayVisible', false)
+        this.$store.commit("set", ["setMenuVisible", false]);
+        this.$store.commit("set", ["setOverlayVisible", false]);
       }
       const section = document.getElementById(value.section)
       this.$scrollTo(section, 750, this.options)

@@ -27,7 +27,6 @@
           </ul>
 
           <div class="db pl8 pr8">
-            <HeaderContact text-align="tal"/>
             <span class="db mt10 pt6"></span>
             <UIButton btn-name="Перезвоните мне" font-size="14px" @click="showModal" />
           </div>
@@ -40,9 +39,6 @@
           </ul>
         </nav>
         <div class="header__right flex aic jcsb">
-          <div class="mr10 pr10">
-            <HeaderContact />
-          </div>
           <div class="header__button">
             <UIButton btn-name="Перезвоните мне" @click="showModal" />
           </div>
@@ -57,14 +53,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import HeaderContact from '@/components/header/components/HeaderContact.vue'
 import HeaderPhone from '@/components/header/components/HeaderPhone.vue'
 import UIButton from '@/components/ui/Button.vue'
 
 export default {
   name: 'HeaderComponent',
   components: {
-    HeaderContact,
     HeaderPhone,
     UIButton
   },
@@ -119,13 +113,13 @@ export default {
       this.$modal.show('order-modal')
     },
     toggleMenuVisible () {
-      this.$store.commit('setMenuVisible', !this.menuVisible)
-      this.$store.commit('setOverlayVisible', this.menuVisible)
+      this.$store.commit("set", ["menuVisible", !this.menuVisible]);
+      this.$store.commit("set", ["overlayVisible", this.menuVisible]);
     },
     scrollTo(value, isSmall = false) {
       if (isSmall) {
-        this.$store.commit('setMenuVisible', false)
-        this.$store.commit('setOverlayVisible', false)
+        this.$store.commit("set", ["menuVisible", false]);
+        this.$store.commit("set", ["overlayVisible", false])
       }
       const section = document.getElementById(value.section)
       this.$scrollTo(section, 750, this.options)
@@ -333,7 +327,7 @@ export default {
         }
       }
     }
-    
+
     &__button {
       display: none;
     }

@@ -6,11 +6,15 @@
       fontSize: fontSize,
       width: display === 'block' ? '100%' : width
     }"
-    :class="{ 'load': load }"
+    :class="[
+      { 'load': load },
+      { 'shimmer': shimmer }
+    ]"
     :disabled="load"
     @click="$emit('click')"
   >
-    <span class="button-component-text">{{ btnName }}</span>
+    <slot></slot>
+    <span :style="{ marginLeft: hasSlot ? '8px' : '' }" class="button-component-text">{{ btnName }}</span>
   </button>
 </template>
 
@@ -42,6 +46,15 @@ export default {
     load: {
       type: Boolean,
       default: () => false
+    },
+    shimmer: {
+      type: Boolean,
+      default: () => false
+    }
+  },
+  computed: {
+    hasSlot() {
+      return this.$slots.default && this.$slots.default.length;
     }
   }
 }
@@ -50,28 +63,60 @@ export default {
 <style lang="scss" scoped>
 .button-component {
   position: relative;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   color: #fff;
   background: linear-gradient(21deg, #dd03e4, #5611ec);
-  display: inline-block;
-  position: relative;
-  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 10px 20px;
   border: none;
   border-radius: 50px;
-  font-weight: 600;
-  transition: .2s linear;
+  transition: all .2s linear;
 
   &:hover {
     -webkit-filter: brightness(120%);
     filter: brightness(120%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   }
 
   &:active {
     transform: scale(0.96);
   }
 
+  &.shimmer::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -100%;
+    width: 12px; /* Ширина полосы */
+    height: 140%;
+    opacity: .8;
+    transform: rotate(30deg);
+    background: linear-gradient(#eee 40%, #fafafa 50%, #eee 60%); /* Цвет полосы */
+    filter: blur(8px); /* Размытие по бокам */
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -25%;
+    }
+    100% {
+      left: 225%;
+    }
+  }
+
+  &.shimmer:hover::before {
+    background: none;
+  }
+
   &-text {
+    margin-bottom: 2px;
     transition: all .2s;
   }
 

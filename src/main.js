@@ -7,6 +7,7 @@ import VModal from 'vue-js-modal'
 import VueScrollTo from 'vue-scrollto'
 import vClickOutside from 'v-click-outside'
 import Popover from 'vue-js-popover'
+import Fragment from 'vue-fragment'
 import './assets/main.scss'
 import './assets/css/bootstrap-grid.min.css'
 
@@ -15,6 +16,7 @@ Vue.use(Vuelidate)
 Vue.use(VModal)
 Vue.use(vClickOutside)
 Vue.use(Popover)
+Vue.use(Fragment.Plugin)
 Vue.use(VueScrollTo, {
   easing: 'ease-in-out'
 })
