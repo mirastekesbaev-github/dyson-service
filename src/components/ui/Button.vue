@@ -63,7 +63,7 @@ export default {
 <style lang="scss" scoped>
 .button-component {
   position: relative;
-  font-family: "Exo 2", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
@@ -73,7 +73,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border: none;
   border-radius: 50px;
   transition: all .2s linear;
@@ -116,7 +116,6 @@ export default {
   }
 
   &-text {
-    margin-bottom: 2px;
     transition: all .2s;
   }
 

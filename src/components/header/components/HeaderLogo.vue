@@ -19,7 +19,7 @@ export default {
 
 <style scoped lang="scss">
 .header-logo {
-  width: 200px;
+  width: 172px;
   height: auto;
   text-align: center;
   font-weight: 600;
@@ -27,8 +27,9 @@ export default {
   line-height: 20px;
   
   &-link {
-    color: black;
+    color: #000;
     text-decoration: none;
+    font-family: 'Raleway', sans-serif;
   }
 }
 </style>

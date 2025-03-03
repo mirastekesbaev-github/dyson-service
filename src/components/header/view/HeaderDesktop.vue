@@ -6,12 +6,14 @@
           <HeaderLogo />
         </div>
         <div class="header-center">
-          <div class="header-center-top">
-            <HeaderSocial />
-          </div>
-          <div class="header-center-bottom">
-            <HeaderDesktopMenu />
-          </div>
+<!--          <div class="header-center-top">-->
+<!--            <HeaderSocial />-->
+<!--          </div>-->
+<!--          <div class="header-center-bottom">-->
+<!--            <HeaderDesktopMenu />-->
+<!--          </div>-->
+          <HeaderDesktopMenu />
+          <HeaderSocial/>
         </div>
         <div class="header-right">
           <HeaderTime />
@@ -39,13 +41,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@media screen and (max-width: 992px) {
+  .header {
+    display: none;
+  }
+}
+
 .header {
   position: fixed;
   z-index: 1000;
-  height: 110px;
   width: 100%;
   padding: 14px 0;
   background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
   &-inner {
     display: flex;
@@ -60,15 +68,20 @@ export default {
   }
 
   &-center {
-    &-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: {
+      left: 1px solid $gray300;
+      right: 1px solid $gray300;
+    };
+    padding: 0 6px;
   }
 
   &-right {
-    width: 258px;
+    width: 212px;
+    min-width: 212px;
   }
 }
 </style>

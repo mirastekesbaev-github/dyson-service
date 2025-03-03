@@ -29,25 +29,24 @@ export default {
   data() {
     return {
       socials: [
-        // {id: 1, name: 'phone', link: '', color: ''},
         {
-          id: 2,
-          name: 'instagram',
-          link: 'https://www.instagram.com/dysonservice.kz?igsh=MXdjam83aGp2cnpyaw==',
-          style: {marginRight: '5px'}
-        },
-        {
-          id: 3,
+          id: 1,
           name: 'whatsapp',
           link: 'https://wa.me/+77075553027?text=Здравствуйте!%20Пишу%20из%20города',
           color: '#25D366'
         },
         {
-          id: 4,
+          id: 2,
           name: 'telegram',
           link: 'https://t.me/+77075553027?text=Здравствуйте!%20Пишу%20из%20города',
           color: '#24A1DE'
-        }
+        },
+        {
+          id: 3,
+          name: 'instagram',
+          link: 'https://www.instagram.com/dysonservice.kz?igsh=MXdjam83aGp2cnpyaw==',
+          style: {marginRight: '5px'}
+        },
       ]
     }
   }

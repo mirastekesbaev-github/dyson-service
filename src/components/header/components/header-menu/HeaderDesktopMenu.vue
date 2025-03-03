@@ -1,6 +1,6 @@
 <template>
   <nav class="header-menu">
-    <ul class="header-menu-list list flex aic">
+    <ul class="header-menu-list">
       <li
           v-for="(item, index) in menu"
           :key="index"
@@ -57,8 +57,13 @@ export default {
 
 <style scoped lang="scss">
 .header-menu {
+  display: block;
+
   .list-item {
+    text-align: left;
     margin: {
+      top: 4px;
+      bottom: 4px;
       right: 8px;
       left: 8px;
     }

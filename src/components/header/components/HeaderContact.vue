@@ -5,7 +5,7 @@
           btn-name="8 800 005 00 08"
           has-slot
           shimmer
-          font-size="20px"
+          font-size="18px"
       >
         <UIIcon icon="phone" color="#fff" :size="26"/>
       </UIButton>
