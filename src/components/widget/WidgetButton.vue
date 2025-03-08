@@ -59,11 +59,11 @@ export default {
   justify-content: center;
 
   &.instagram {
-    bottom: 39%;
+    bottom: 43%;
   }
 
   &.telegram {
-    bottom: 29%;
+    bottom: 31%;
   }
 
   &.whatsapp {
