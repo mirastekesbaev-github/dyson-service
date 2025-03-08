@@ -15,7 +15,9 @@
     <OrderModal />
     <OrderSuccessModal />
     <OrderErrorModal />
-    <WidgetButton />
+    <WidgetButton button="instagram" />
+    <WidgetButton button="telegram" />
+    <WidgetButton button="whatsapp" />
   </div>
 </template>
 
@@ -80,14 +82,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#app {
-  position: relative;
+@media screen and (min-width: 992px) {
+  #app {
+    position: relative;
+
+    .main {
+      padding-top: 116px;
+    }
+  }
 }
 
 @media screen and (max-width: 992px) {
   #app {
     position: relative;
-    padding-top: 86px;
 
     .overlay {
       position: absolute;
@@ -100,11 +107,11 @@ export default {
       height: 100%;
       background: rgba(0, 0, 0, 0.2);
     }
-  }
-}
 
-.main {
-  padding-top: 110px;
+    .main {
+      padding-top: 102px;
+    }
+  }
 }
 </style>
 

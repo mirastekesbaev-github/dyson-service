@@ -126,7 +126,7 @@ export default {
     .content {
       .title {
         text-align: center;
-        font-size: 36px;
+        font-size: 34px;
       }
 
       .list {

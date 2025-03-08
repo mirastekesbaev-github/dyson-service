@@ -32,4 +32,11 @@ export default {
     font-family: 'Raleway', sans-serif;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .header-logo {
+    width: 136px;
+    font-size: 19px;
+  }
+}
 </style>
