@@ -18,7 +18,12 @@
         <h4 class="title tac"> Спасибо за оставленную заявку! </h4>
         <p class="text tac"> Ваш заявка принята в обработку. </p>
         <p class="text tac"> Мы свяжемся с вами в ближайшее время. </p>
-        <UIButton btn-name="Готово" display="block" @click="closeModal"/>
+        <UIButton
+          btn-name="Готово"
+          display="block"
+          :style="{ padding: '10px 12px' }"
+          @click="closeOrderSuccessModal"
+        />
       </div>
     </modal>
   </div>
@@ -31,7 +36,7 @@ export default {
   name: 'OrderSuccessModal',
   components: { UIButton },
   methods: {
-    closeModal() {
+    closeOrderSuccessModal() {
       this.$modal.hide('order-success-modal')
     }
   }

@@ -4,7 +4,8 @@
     class="button-component"
     :style="{ 
       fontSize: fontSize,
-      width: display === 'block' ? '100%' : width
+      width: display === 'block' ? '100%' : width,
+      ...extraStyle
     }"
     :class="[
       { 'load': load },
@@ -50,6 +51,10 @@ export default {
     shimmer: {
       type: Boolean,
       default: () => false
+    },
+    extraStyle: {
+      type: Object,
+      default: () => ({})
     }
   },
   computed: {
@@ -63,15 +68,15 @@ export default {
 <style lang="scss" scoped>
 .button-component {
   position: relative;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 400;
   cursor: pointer;
   text-decoration: none;
   color: #fff;
   background: linear-gradient(21deg, #dd03e4, #5611ec);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   overflow: hidden;
   padding: 8px 16px;
   border: none;

@@ -161,7 +161,6 @@ export default {
           width: 100%;
           padding: 16px 0;
           color: $gray100;
-          font-family: 'Exo 2', sans-serif;
           font-size: 20px;
 
           .icon {

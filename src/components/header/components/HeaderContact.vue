@@ -2,10 +2,10 @@
   <div class="header-contact">
     <a class="header-contact-telephone" href="tel: 8 800 005 00 08">
       <UIButton
-          btn-name="8 800 005 00 08"
-          has-slot
-          shimmer
-          font-size="18px"
+        btn-name="8 800 005 00 08"
+        has-slot
+        shimmer
+        font-size="18px"
       >
         <UIIcon icon="phone" color="#fff" :size="26"/>
       </UIButton>

@@ -6,17 +6,18 @@
           <HeaderLogo />
         </div>
         <div class="header-center">
-<!--          <div class="header-center-top">-->
-<!--            <HeaderSocial />-->
-<!--          </div>-->
-<!--          <div class="header-center-bottom">-->
-<!--            <HeaderDesktopMenu />-->
-<!--          </div>-->
           <HeaderDesktopMenu />
-          <HeaderSocial/>
+          <div class="header-center-right">
+            <UIButton
+              btn-name="Заказать звонок"
+              shimmer
+              @click="openOrderModal"
+            />
+            <HeaderSocial />
+          </div>
         </div>
         <div class="header-right">
-          <HeaderTime />
+          <HeaderContact />
         </div>
       </div>
     </div>
@@ -25,9 +26,10 @@
 
 <script>
 import HeaderLogo from "../../header/components/HeaderLogo.vue";
-import HeaderSocial from "../../header/components/HeaderSocial.vue";
+import HeaderSocial from "../components/HeaderSocial.vue";
 import HeaderDesktopMenu from "../../header/components/header-menu/HeaderDesktopMenu.vue";
 import HeaderContact from "../components/HeaderContact.vue";
+import UIButton from "../../ui/Button.vue";
 
 export default {
   name: "HeaderAlternate",
@@ -35,7 +37,13 @@ export default {
     HeaderLogo,
     HeaderSocial,
     HeaderDesktopMenu,
-    HeaderTime: HeaderContact
+    HeaderContact,
+    UIButton
+  },
+  methods: {
+    openOrderModal() {
+      this.$modal.show('order-modal')
+    }
   }
 }
 </script>
@@ -49,7 +57,7 @@ export default {
 
 .header {
   position: fixed;
-  z-index: 1000;
+  z-index: 500;
   width: 100%;
   padding: 14px 0;
   background: #fff;
@@ -77,6 +85,12 @@ export default {
       right: 1px solid $gray300;
     };
     padding: 0 6px;
+
+    &-right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &-right {

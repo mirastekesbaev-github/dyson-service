@@ -4,7 +4,7 @@
       <div class="header__body flex aic jcsb pt6">
         <div class="header__logo">
           <a class="header__link" href="https://dyson-service.kz">
-            Центр технического обслуживания dyson
+            Центр технического обслуживания Dyson
           </a>
         </div>
         <div class="header__burger" @click="toggleMenuVisible">

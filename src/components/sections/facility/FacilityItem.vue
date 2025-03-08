@@ -97,9 +97,9 @@ export default {
     p {
         font-size: 15px;
         line-height: 132%;
-        font-weight: 400;
+        font-weight: 500;
         letter-spacing: 1.2px;
-        color: $gray400;
+        color: $gray500;
     }
   }
 }

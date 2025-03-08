@@ -12,7 +12,6 @@
       <Query />
       <Contact />
     </main>
-    <Footer />
     <OrderModal />
     <OrderSuccessModal />
     <OrderErrorModal />
@@ -29,7 +28,6 @@ import Order from '@/components/sections/Order.vue'
 import Facility from '@/components/sections/facility/Facility.vue'
 import Query from '@/components/sections/Query.vue'
 import Contact from '@/components/sections/Contact.vue'
-import Footer from '@/components/footer/Footer.vue'
 import OrderModal from '@/components/modal/OrderModal.vue'
 import OrderSuccessModal from '@/components/modal/OrderSuccessModal.vue'
 import OrderErrorModal from '@/components/modal/OrderErrorModal.vue'
@@ -45,7 +43,6 @@ export default {
     Facility,
     Query,
     Contact,
-    Footer,
     OrderModal,
     OrderSuccessModal,
     OrderErrorModal,

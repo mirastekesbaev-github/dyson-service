@@ -11,7 +11,7 @@ export default {
   name: "HeaderLogo",
   data() {
     return {
-      title: "Центр <br> технического <br> обслуживания <br> dyson"
+      title: "Центр <br> технического <br> обслуживания <br> Dyson"
     }
   }
 }

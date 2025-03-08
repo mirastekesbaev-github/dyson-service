@@ -9,11 +9,11 @@
                     Контакты
               </h2>
               <p class="section__subtitle subtitle">
-                    Сервисный центр работает с 9:00 утра до 18:00 вечера. В воскресенье выходной.
+                Центр технического обслуживания Dyson работает с 9:00 до 18:00 часов ежедневно, выходной Воскресенье
               </p>
               <div class="body-left__item">
                 <p class="address" style="margin-bottom: 8px;">
-                  <span>Наши адреса: </span>
+                  Наши адреса:
                 </p>
                 <p class="address" style="margin-bottom: 6px;">
                   <span>г. Астана:</span> ул. Бухар Жырау, 40 п7
@@ -26,37 +26,37 @@
                 </p>
               </div>
               <div class="body-left__item">
-                <p>
-                    <span>Телефон: </span>
-                    <a href="tel: +7 701 930-05-00">+7 701 930-05-00</a>
-                </p>
+                <div class="box">
+                  <p class="address" style="margin-bottom: 4px;">
+                    Наши социальные сети:
+                  </p>
+                  <div class="item__icons flex">
+                    <div class="item__icon">
+                      <a href="https://wa.me/+77019300500" target="_blank">
+                        <UIIcon icon="whatsapp" :size="30" color="#444" />
+                      </a>
+                    </div>
+                    <div class="item__icon">
+                      <a href="https://www.instagram.com/dysonservice.kz?igsh=MXdjam83aGp2cnpyaw==" target="_blank">
+                        <UIIcon icon="telegram" :size="30" color="#444" />
+                      </a>
+                    </div>
+                    <div class="item__icon">
+                      <a href="https://www.instagram.com/dysonservice.kz?igsh=MXdjam83aGp2cnpyaw==" target="_blank">
+                        <UIIcon icon="instagram" :size="30" color="#444" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="body-left__item">
-                <div class="box">
-                    <span>
-                        Наши социальные сети:
-                    </span>
-                    <div class="item__icons flex">
-                        <div class="item__icon">
-                          <a href="https://www.instagram.com/dysonservice.kz?igsh=MXdjam83aGp2cnpyaw==" target="_blank">
-                            <img src="@/assets/icons/instagram-line.svg" alt="">
-                          </a>
-                        </div>
-                        <!--
-                          <div class="item__icon">
-                            <a href="https://wa.me/+77019300500" target="_blank">
-                              <img src="@/assets/icons/whatsapp-line.svg" alt="">
-                            </a>
-                          </div>
-                        -->
-                    </div>
-                </div>
+                <p class="address" style="margin-bottom: 8px;">
+                  Наша почта:
+                </p>
+                <p class="address">
+                  <span>info@dysoncentre.kz</span>
+                </p>
               </div>
-              <!--
-                <div class="body-left__item">
-                  <UIButton btn-name="Напишите нам" @click="showModal" />
-                </div>
-              -->
             </div>
             <div class="body-right col-xxl-6 col-xl-6 col-lg-6">
               <iframe
@@ -74,12 +74,12 @@
 </template>
 
 <script>
-//import UIButton from '@/components/ui/Button.vue'
+import UIIcon from "@/components/ui/Icon.vue";
 
 export default {
   name: 'ContactSection',
   components: {
-    //UIButton
+    UIIcon
   },
   methods: {
     showModal() {
@@ -96,15 +96,17 @@ export default {
     &__body {
       .body-left {
         .subtitle {
-          margin-bottom: 52px;
+          margin-bottom: 38px;
         }
 
         &__item {
-          padding: 24px 0;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 300;
+          padding: 18px 0;
           border-top: 1px solid $gray300;
 
           &:last-child {
-            border-top: none;
+            border-top: 1px solid $gray300;
           }
 
           p {
@@ -122,9 +124,9 @@ export default {
           }
 
           .item__icons {
-            margin-top: 16px;
+            margin-top: 8px;
             .item__icon {
-              margin-right: 6px;
+              margin-right: 8px;
               width: 28px;
               height: 28px;
             }

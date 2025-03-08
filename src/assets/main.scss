@@ -5,8 +5,6 @@
 @import './spaces.scss';
 
 body {
-    //font-family: 'Titillium Web', sans-serif;
-    //font-family: 'Exo 2', sans-serif;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -30,10 +28,11 @@ section {
 }
 
 .section__subtitle {
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 132%;
-    letter-spacing: 1.4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 112%;
+    letter-spacing: 1.2px;
 }
 
 .carousel {

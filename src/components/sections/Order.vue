@@ -75,7 +75,13 @@
               <input v-model="form.problem" class="input" type="text">
             </div>
             <div class="order-form__field">
-              <UIButton btn-name="Оформить заявку" :width="btnWidth" type="submit" :load="load" />
+              <UIButton
+                btn-name="Оформить заявку"
+                :width="btnWidth"
+                type="submit"
+                :load="load"
+                :style="{ padding: '10px 12px' }"
+              />
             </div>
           </form>
         </div>

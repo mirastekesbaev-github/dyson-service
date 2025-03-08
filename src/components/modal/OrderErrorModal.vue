@@ -18,7 +18,12 @@
           <h4 class="title tac"> Сервис не доступен! </h4>
           <p class="text tac"> Сервис временно не доступен. </p>
           <p class="text tac "> Попробуйте позже. </p>
-          <UIButton btn-name="Готово" display="block" @click="closeModal"/>
+          <UIButton
+            btn-name="Готово"
+            display="block"
+            :style="{ padding: '10px 12px' }"
+            @click="closeOrderErrorModal"
+          />
         </div>
       </modal>
     </div>
@@ -31,7 +36,7 @@
     name: 'OrderSuccessModal',
     components: { UIButton },
     methods: {
-      closeModal() {
+      closeOrderErrorModal() {
         this.$modal.hide('order-error-modal')
       }
     }

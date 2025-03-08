@@ -76,7 +76,13 @@
               Введите корректный номер телефона!
             </span>
           </div>
-          <UIButton btn-name="Отправить" display="block" type="submit" :load="load"/>
+          <UIButton
+            btn-name="Отправить"
+            display="block"
+            type="submit"
+            :load="load"
+            :extra-style="{ marginTop: '32px', padding: '10px 12px' }"
+          />
         </form>
       </div>
     </modal>
@@ -337,12 +343,6 @@ export default {
         }
       }
     }
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .modal {
-
   }
 }
 </style>

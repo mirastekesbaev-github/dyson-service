@@ -48,11 +48,6 @@ export default {
     text-align: center;
     font-size: 18px;
     font-weight: 600;
-
-    span {
-      font-family: 'Quicksand', 'sans-serif';
-      font-weight: 500;
-    }
   }
 }
 </style>

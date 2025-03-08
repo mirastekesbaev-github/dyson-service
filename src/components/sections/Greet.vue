@@ -2,19 +2,19 @@
   <section id="start-section">
     <div class="container h100">
       <div class="content h100 flex fdc jcc">
-        <h2 class="title">Ремонт всей техники <span>dyson</span> с гарантией 1 год</h2>
+        <h2 class="title">Ремонт всех устройств <span>Dyson</span> с предоставлением гарантии на 1 год </h2>
         <ul class="list">
           <li v-for="(item, index) in list" :key="index" class="item">
-            <span class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M11.602 13.7599L13.014 15.1719L21.4795 6.7063L22.8938 8.12051L13.014 18.0003L6.65 11.6363L8.06421 10.2221L10.189 12.3469L11.6025 13.7594L11.602 13.7599ZM11.6037 10.9322L16.5563 5.97949L17.9666 7.38977L13.014 12.3424L11.6037 10.9322ZM8.77698 16.5873L7.36396 18.0003L1 11.6363L2.41421 10.2221L3.82723 11.6352L3.82604 11.6363L8.77698 16.5873Z" />
-              </svg>
-            </span>
+            <UIIcon icon="check" color="#e7aaff" :size="34"></UIIcon>
             <p class="text">{{ item.text }}</p>
           </li>
         </ul>
         <div class="content__button">
-          <UIButton btn-name="Вызвать мастера" @click="showModal" />
+          <UIButton
+            btn-name="Позвоните мне"
+            :style="{ padding: '10px 24px' }"
+            @click="openOrderModal"
+          />
         </div>
       </div>
     </div>
@@ -23,25 +23,25 @@
 
 <script>
 import UIButton from '@/components/ui/Button.vue'
+import UIIcon from '@/components/ui/Icon.vue'
 
 export default {
   name: 'GreetSection',
-  components: { UIButton },
+  components: { UIButton, UIIcon },
   data() {
     return {
       list: [
-        { text: 'Бесплатный выезд мастера на дом' },
-        { text: 'Бесплатная диагностика за 15 мин' },
-        { text: 'Бесплатная доставка в сервис и обратно' },
-        { text: 'Оригинальные запчасти на всю технику' },
-        { text: 'Авторизованный сервисный центр' },
-        { text: 'Профессиональный ремонт' },
-        { text: 'Широкий спектр услуг' }
+        { text: 'Online/Offline диагностика' },
+        { text: 'Бесплатная доставка до центра технического обслуживания и обратно по всему Казахстану' },
+        { text: 'Оригинальные запчасти на все устройства' },
+        { text: 'Авторизованный Центр технического обслуживания  ' },
+        { text: 'Верификация устройства dyson' },
+        { text: 'Постгарантийное обслуживание' }
       ]
     }
   },
   methods: {
-    showModal() {
+    openOrderModal() {
       this.$modal.show('order-modal')
     }
   }
@@ -75,14 +75,14 @@ export default {
     .title {
       z-index: 10;
       margin-bottom: 16px;
-      font-size: 46px;
+      font-size: 44px;
       font-weight: 700;
       line-height: 100%;
       color: #fff;
 
       span {
-        font-family: 'Quicksand', sans-serif;
-        font-weight: 700;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 900;
         color: rgb(216, 155, 240);
       }
     }
@@ -107,7 +107,7 @@ export default {
         .text {
           font-size: 28px;
           font-weight: 400;
-          line-height: 126%;
+          line-height: 108%;
           color: #fff;
         }
       }

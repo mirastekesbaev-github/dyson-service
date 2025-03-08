@@ -4,12 +4,11 @@
       <div class="content">
         <div class="content__header">
           <h2 class="section__title title tac">
-            Преимущества нашего сервисного центра
+            Преимущества нашего Центра технического обслуживания <span>Dyson</span>
           </h2>
           <p class="section__subtitle subtitle tac">
-            Наша мастерская по техникам <span>dyson</span> оснащена необходимым 
-            профильным оборудованием, что позволяет нашим специалистам 
-            устранять любые неполадки в работе техники.
+            Центр технического обслуживания <span>Dyson</span> оснащен необходимым профильным оборудованием,
+            что позволяет нашим специалистам устранять любые неполадки в работе устройств <span>Dyson</span>
           </p>
         </div>
         <div class="content__body">
@@ -18,21 +17,21 @@
               <FacilityItem 
                 icon="tools"
                 title="Бесплатная диагностика"
-                text="Диагноз проводится на профессиональном оборудовании"
+                text="Диагностика проводится на профессиональном оборудовании с выдачей Акта о техническом состоянии"
               />
             </div>
             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
               <FacilityItem 
                 icon="users"
                 title="Квалифицированные мастера"
-                text="Все наши мастера имеют специльное образование и большой опыт работы"
+                text="Наши специалисты имеют специальное образование и многолетний опыт работы"
               />
             </div>
             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
               <FacilityItem 
                 icon="truck"
-                title="Бесплатная доставка"
-                text="Мастер отвозит технику в сервис и привозит обратно к Вам домой совершенно бесплатно"
+                title="Бесплатная доставка по всему Казахстану"
+                text="ЦТО организовывает логистику Ваших устройств от Вашего дома до ЦТО и обратно"
               />
             </div>
             <div class="col-xxl-4 col-xl-4 col-md-6 col-sm-6 col-12">
@@ -53,7 +52,7 @@
               <FacilityItem 
                 icon="money"
                 title="Оплата по факту ремонта"
-                text="Никаких предоплат, платных выездов или подводных камней. Мы починили, Вы проверили и оплатили удобным способом."
+                text="Никаких предоплат и платных выездов. Мы починили, Вы проверили и оплатили удобным способом"
               />
             </div>
           </div>
@@ -79,12 +78,20 @@ export default {
   .content {
     &__header {
       margin-bottom: 52px;
+      .title {
+        span {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 700;
+          color: rgb(113, 13, 143);
+        }
+      }
+
       .subtitle {
         padding: 0 100px;
 
         span {
-          font-family: 'Quicksand', sans-serif;
-          font-weight: 700;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 400;
           color: rgb(113, 13, 143);
         }
       }
