@@ -16,13 +16,31 @@
                   Наши адреса:
                 </p>
                 <p class="address" style="margin-bottom: 6px;">
-                  <span>г. Астана:</span> ул. Бухар Жырау, 40 п7
+                  <span>г. Астана: </span>
+                  <a
+                    href="https://2gis.kz/astana/inside/70030076157502414/firm/70000001089388327?m=71.447307%2C51.09649%2F16.57"
+                    target="_blank"
+                  >
+                    ул. Бухар Жырау, 40 п7
+                  </a>
                 </p>
                 <p class="address" style="margin-bottom: 6px">
-                  <span>г. Алматы:</span> ул. Кабанбай батыра, 150
+                  <span>г. Алматы: </span>
+                  <a
+                    href="https://2gis.kz/almaty/inside/9430047374966873/firm/70000001033672885/76.925452%2C43.248111?m=76.925633%2C43.248124%2F19.28"
+                    target="_blank"
+                  >
+                    ул. Кабанбай батыра, 150
+                  </a>
                 </p>
                 <p class="address">
-                  <span>г. Шымкент:</span> мкр. Нурсат, 165
+                  <span>г. Шымкент: </span>
+                  <a
+                    href="https://2gis.kz/shymkent/inside/22659371323491004/firm/70000001092460421?m=69.633381%2C42.361711%2F12.57"
+                    target="_blank"
+                  >
+                    мкр. Нурсат, 165
+                  </a>
                 </p>
               </div>
               <div class="body-left__item">
@@ -32,17 +50,17 @@
                   </p>
                   <div class="item__icons flex">
                     <div class="item__icon">
-                      <a href="https://wa.me/+77019300500" target="_blank">
+                      <a href="https://wa.me/+77075553027?text=Здравствуйте!%20Пишу%20из%20города" target="_blank">
                         <UIIcon icon="whatsapp" :size="30" color="#444" />
                       </a>
                     </div>
                     <div class="item__icon">
-                      <a href="https://www.instagram.com/dysonservice.kz?igsh=MXdjam83aGp2cnpyaw==" target="_blank">
+                      <a href="https://t.me/+77075553027?text=Здравствуйте!%20Пишу%20из%20города" target="_blank">
                         <UIIcon icon="telegram" :size="30" color="#444" />
                       </a>
                     </div>
                     <div class="item__icon">
-                      <a href="https://www.instagram.com/dysonservice.kz?igsh=MXdjam83aGp2cnpyaw==" target="_blank">
+                      <a href="https://www.instagram.com/dservice.kz" target="_blank">
                         <UIIcon icon="instagram" :size="30" color="#444" />
                       </a>
                     </div>
@@ -54,7 +72,9 @@
                   Наша почта:
                 </p>
                 <p class="address">
-                  <span>info@dysoncentre.kz</span>
+                  <a href="mailto:info@dysoncentre.kz">
+                    info@dysoncentre.kz
+                  </a>
                 </p>
               </div>
             </div>

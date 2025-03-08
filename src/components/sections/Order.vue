@@ -4,7 +4,7 @@
       <div class="content">
         <div class="content__header">
           <h2 class="section__title title tac">
-            <p>Получите скидку 10% на ремонт, отправив заявку с сайта</p>
+            <p>Получите скидку <span>10%</span> на ремонт, отправив заявку с сайта</p>
           </h2>
         </div>
         <div class="content__body flex jcc">
@@ -224,6 +224,11 @@ export default {
       .title {
         color: $gray100;
         padding: 0 282px;
+
+        span {
+          font-family: 'Open Sans', sans-serif !important;
+          color: #fff;
+        }
       }
     }
 

@@ -2,7 +2,9 @@
   <section id="start-section">
     <div class="container h100">
       <div class="content h100 flex fdc jcc">
-        <h2 class="title">Ремонт всех устройств <span>Dyson</span> с предоставлением гарантии на 1 год </h2>
+        <h2 class="title">
+          Ремонт всех устройств <span class="insert">Dyson</span> с предоставлением гарантии на <span class="insert-os">1</span> год
+        </h2>
         <ul class="list">
           <li v-for="(item, index) in list" :key="index" class="item">
             <UIIcon icon="check" color="#e7aaff" :size="34"></UIIcon>
@@ -80,10 +82,14 @@ export default {
       line-height: 100%;
       color: #fff;
 
-      span {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 900;
+      span.insert {
+        font-family: 'Raleway', sans-serif !important;
+        font-weight: 800;
         color: rgb(216, 155, 240);
+      }
+
+      span.insert-os {
+        font-family: 'Open Sans', sans-serif !important;
       }
     }
 

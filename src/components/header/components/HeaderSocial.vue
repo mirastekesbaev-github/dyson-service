@@ -48,7 +48,7 @@ export default {
         {
           id: 3,
           name: 'instagram',
-          link: 'https://www.instagram.com/dysonservice.kz?igsh=MXdjam83aGp2cnpyaw==',
+          link: 'https://www.instagram.com/dservice.kz',
           color: '#FFF',
           background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)'
         },

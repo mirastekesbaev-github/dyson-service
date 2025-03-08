@@ -9,7 +9,7 @@
       :adaptive="true"
     >
       <div class="w100 flex fdc aic jcc">
-        <button class="modal-button" @click="closeModal">
+        <button class="modal-button" @click="closeOrderSuccessModal">
           <img src="@/assets/icons/close-line.svg">
         </button>
         <div class="icon">

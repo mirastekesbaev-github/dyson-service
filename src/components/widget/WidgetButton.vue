@@ -4,24 +4,7 @@
       <a class="widget-button-inner" href="https://wa.me/+77019300500?text=Здравствуйте!%20Пишу%20из%20города" target="_blank">
         <img class="widget-button-icon animation" src="../../assets/icons/whatsapp-line-white.svg" alt="whatsapp">
       </a>
-<!--      <button class="widget-button-inner" v-popover:widget.left>-->
-<!--        <img class="widget-button-icon animation" src="../../assets/icons/whatsapp-line-white.svg" alt="whatsapp">-->
-<!--      </button>-->
     </div>
-<!--    <popover name="widget">-->
-<!--      <p style="margin-bottom: 10px;">-->
-<!--        <span>г. Астана: </span>-->
-<!--        <a href="https://wa.me/+77778037197" target="_blank">-->
-<!--          +7 (777) 803-71-97-->
-<!--        </a>-->
-<!--      </p>-->
-<!--      <p>-->
-<!--        <span>г. Алматы: </span>-->
-<!--        <a href="https://wa.me/+77019300500" target="_blank">-->
-<!--           +7 (701) 930-05-00-->
-<!--        </a>-->
-<!--      </p>-->
-<!--    </popover>-->
   </div>
 </template>
 
@@ -103,7 +86,13 @@ export default {
   a { color: #101828; }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 992px) {
+  .widget-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 992px) {
   .widget-button {
     transform: scale(.8);
   }

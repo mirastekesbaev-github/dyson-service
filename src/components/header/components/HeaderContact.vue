@@ -12,7 +12,7 @@
     </a>
 
     <div class="header-contact-info">
-      <p>Работаем с 9:00 до 18:00</p>
+      <p>Работаем с <span>9:00</span> до <span>18:00</span></p>
       <p>*бесплатный звонок по Казахстану</p>
     </div>
   </div>
@@ -44,6 +44,10 @@ export default {
   &-info {
     width: 100%;
     text-align: right;
+
+    span {
+      font-family: 'Open Sans', sans-serif !important;
+    }
 
     p:nth-child(1) {
       margin-top: 8px;

@@ -74,6 +74,10 @@ export default {
       margin-bottom: 70px;
       .title {
         padding: 0 212px;
+
+        span {
+          font-family: 'Open Sans', sans-serif !important;
+        }
       }
 
       .subtitle {
