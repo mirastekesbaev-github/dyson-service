@@ -12,26 +12,50 @@
           </p>
         </div>
         <div class="content__body">
-          <div class="row gy-5">
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <ProductItem img="styler" name="Стайлер" />
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <ProductItem img="dryer" name="Сушилка для рук" />
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <ProductItem img="humidifier" name="Увлажнитель воздуха" />
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <ProductItem img="hairdryer" name="Фен" />
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <ProductItem img="vacuum" name="Пылесос" />
-            </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <ProductItem img="rectifier" name="Выпрямитель" />
-            </div>
+          <div class="product-item">
+            <img src="@/assets/img/Стайлер.png" alt="styler">
+            <span>Стайлер</span>
           </div>
+          <div class="product-item">
+            <img src="@/assets/img/Сушилка.png" alt="dryer">
+            <span>Сушилка для рук</span>
+          </div>
+          <div class="product-item">
+            <img src="@/assets/img/Пылесос.png" alt="vacuum">
+            <span>Пылесос</span>
+          </div>
+          <div class="product-item">
+            <img src="@/assets/img/Фен.png" alt="hairdryer">
+            <span>Фен</span>
+          </div>
+          <div class="product-item">
+            <img src="@/assets/img/УвлажнительВоздуха.jpg" alt="humidifier">
+            <span>Увлажнитель воздуха</span>
+          </div>
+          <div class="product-item">
+            <img src="@/assets/img/Выпрямитель.png" alt="rectifier">
+            <span>Выпрямитель</span>
+          </div>
+<!--          <div class="row gy-5">-->
+<!--            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">-->
+<!--              <ProductItem img="styler" name="Стайлер" />-->
+<!--            </div>-->
+<!--            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">-->
+<!--              <ProductItem img="dryer" name="Сушилка для рук" />-->
+<!--            </div>-->
+<!--            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">-->
+<!--              <ProductItem img="vacuum" name="Пылесос" />-->
+<!--            </div>-->
+<!--            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">-->
+<!--              <ProductItem img="hairdryer" name="Фен" />-->
+<!--            </div>-->
+<!--            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">-->
+<!--              <ProductItem img="humidifier" name="Увлажнитель воздуха" />-->
+<!--            </div>-->
+<!--            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6">-->
+<!--              <ProductItem img="rectifier" name="Выпрямитель" />-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
         <div class="content__carousel">
           <VueSlickCarousel 
@@ -87,6 +111,31 @@ export default {
 
     &__body {
       margin-bottom: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: minmax(160px, 400px);
+      grid-row-gap: 80px;
+
+      .product-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+          span {
+            margin-top: 52px;
+          }
+        }
+
+        img {
+          display: block;
+          width: auto;
+          height: 100%;
+        }
+      }
+
       .title {
         margin-bottom: 42px;
         text-align: center;
@@ -126,6 +175,10 @@ export default {
           padding: 0 72px;
         }
       }
+
+      &__body {
+        grid-auto-rows: minmax(160px, 300px);
+      }
     }
   }
 }
@@ -141,6 +194,10 @@ export default {
         .subtitle {
           padding: 0 32px;
         }
+      }
+
+      &__body {
+        grid-auto-rows: minmax(160px, 232px);
       }
     }
   }

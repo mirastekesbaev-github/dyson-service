@@ -13,10 +13,23 @@
         </ul>
         <div class="content__button">
           <UIButton
+            class="order-button"
             btn-name="Позвоните мне"
+            font-size="20px"
             :style="{ padding: '10px 24px' }"
             @click="openOrderModal"
           />
+
+          <a class="call-button" href="tel: 8 800 005 00 08">
+            <UIButton
+              btn-name="8 800 005 00 08"
+              has-slot
+              shimmer
+              font-size="20px"
+            >
+              <UIIcon icon="phone" color="#fff" :size="26"/>
+            </UIButton>
+          </a>
         </div>
       </div>
     </div>
@@ -115,6 +128,29 @@ export default {
           font-weight: 400;
           line-height: 108%;
           color: #fff;
+        }
+      }
+    }
+    
+    &__button {
+      .call-button {
+        display: none;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #start-section {
+    .content {
+      &__button {
+        .order-button {
+          display: none;
+        }
+
+        .call-button {
+          display: block;
         }
       }
     }
