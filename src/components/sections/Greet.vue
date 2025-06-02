@@ -12,14 +12,6 @@
           </li>
         </ul>
         <div class="content__button">
-          <UIButton
-            class="order-button"
-            btn-name="Позвоните мне"
-            font-size="20px"
-            :style="{ padding: '10px 24px' }"
-            @click="openOrderModal"
-          />
-
           <a class="call-button" href="tel: 8 800 005 00 08">
             <UIButton
               btn-name="8 800 005 00 08"

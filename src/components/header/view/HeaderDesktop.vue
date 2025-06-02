@@ -8,11 +8,6 @@
         <div class="header-center">
           <HeaderDesktopMenu />
           <div class="header-center-right">
-            <UIButton
-              btn-name="Заказать звонок"
-              shimmer
-              @click="openOrderModal"
-            />
             <HeaderSocial />
           </div>
         </div>
@@ -29,7 +24,6 @@ import HeaderLogo from "../../header/components/HeaderLogo.vue";
 import HeaderSocial from "../components/HeaderSocial.vue";
 import HeaderDesktopMenu from "../../header/components/header-menu/HeaderDesktopMenu.vue";
 import HeaderContact from "../components/HeaderContact.vue";
-import UIButton from "../../ui/Button.vue";
 
 export default {
   name: "HeaderAlternate",
@@ -37,8 +31,7 @@ export default {
     HeaderLogo,
     HeaderSocial,
     HeaderDesktopMenu,
-    HeaderContact,
-    UIButton
+    HeaderContact
   },
   methods: {
     openOrderModal() {
