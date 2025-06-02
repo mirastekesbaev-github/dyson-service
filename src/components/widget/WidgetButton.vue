@@ -40,6 +40,10 @@ export default {
     button: {
       type: String,
       default: () => ""
+    },
+    type: {
+      type: String,
+      default: () => ""
     }
   }
 }
