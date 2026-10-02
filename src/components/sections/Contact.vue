@@ -9,7 +9,7 @@
                     Контакты
               </h2>
               <p class="section__subtitle subtitle">
-                Центр технического обслуживания Dyson работает с 9:00 до 18:00 часов ежедневно, выходной Воскресенье
+                Центр технического обслуживания работает с 9:00 до 18:00 часов ежедневно, выходной Воскресенье
               </p>
               <div class="body-left__item">
                 <p class="address" style="margin-bottom: 8px;">
@@ -21,7 +21,7 @@
                     href="https://2gis.kz/astana/inside/70030076157502414/firm/70000001089388327?m=71.447307%2C51.09649%2F16.57"
                     target="_blank"
                   >
-                    ул. Бухар Жырау, 40 п7
+                    Аль-Фараби 17\1, п.3 (ЖК Арнау 5)
                   </a>
                 </p>
                 <p class="address" style="margin-bottom: 6px">
@@ -66,16 +66,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="body-left__item">
-                <p class="address" style="margin-bottom: 8px;">
-                  Наша почта:
-                </p>
-                <p class="address">
-                  <a href="mailto:info@dysoncentre.kz">
-                    info@dysoncentre.kz
-                  </a>
-                </p>
               </div>
             </div>
             <div class="body-right col-xxl-6 col-xl-6 col-lg-6">

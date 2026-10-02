@@ -3,7 +3,7 @@
     <div class="container h100">
       <div class="content h100 flex fdc jcc">
         <h2 class="title">
-          Ремонт всех устройств <span class="insert">Dyson</span> с предоставлением гарантии на <span class="insert-os">1</span> год
+          Ремонт всех устройств с предоставлением гарантии на <span class="insert-os">1</span> год
         </h2>
         <ul class="list">
           <li v-for="(item, index) in list" :key="index" class="item">
@@ -39,10 +39,8 @@ export default {
     return {
       list: [
         { text: 'Online/Offline диагностика' },
-        { text: 'Бесплатная доставка до центра технического обслуживания и обратно по всему Казахстану' },
-        { text: 'Оригинальные запчасти на все устройства' },
-        { text: 'Авторизованный Центр технического обслуживания  ' },
-        { text: 'Верификация устройства dyson' },
+        { text: 'Запчасти на все устройства' },
+        { text: 'Независимый центр технического обслуживания' },
         { text: 'Постгарантийное обслуживание' }
       ]
     }
@@ -86,12 +84,6 @@ export default {
       font-weight: 700;
       line-height: 100%;
       color: #fff;
-
-      span.insert {
-        font-family: 'Raleway', sans-serif !important;
-        font-weight: 800;
-        color: rgb(216, 155, 240);
-      }
 
       span.insert-os {
         font-family: 'Open Sans', sans-serif !important;
